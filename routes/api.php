@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\Auth\AuthController;
+use App\Http\Controllers\API\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use App\Http\Controllers\API\Auth\AuthController;
 */
 
 Route::post('auth', [AuthController::class,'authenticate']);
+
+Route::post('register', [RegisterController::class,'register']);
+
+//Route::put('users/{user}update', [RegisterController::class,'register']);
