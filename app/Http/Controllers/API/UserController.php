@@ -21,9 +21,9 @@ class UserController {
         return response()->json('User updated successfuly',200);
     }
 
-    public function delete(User $user)
+    public function delete($id)
     {
-        $user->destroy();
+        User::findOrFail($id)->delete();
 
         return response()->json('User deleted successfuly',200);
     }

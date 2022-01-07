@@ -22,3 +22,5 @@ Route::post('auth', [AuthController::class,'authenticate']);
 Route::post('register', [RegisterController::class,'register']);
 
 Route::put('users/{id}/update', [UserController::class,'update']);
+
+Route::delete('users/{id}/delete', [UserController::class,'delete']);
