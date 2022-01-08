@@ -25,4 +25,4 @@ Route::put('users/{id}/update', [UserController::class,'update'])->middleware('a
 
 Route::delete('users/{id}/delete', [UserController::class,'delete'])->middleware('auth:api');
 
-Route::get('users', [UserController::class,'index'])->middleware('auth:api');
+Route::get('users', [UserController::class,'index']);
