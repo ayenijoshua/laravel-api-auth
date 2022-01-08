@@ -7,6 +7,12 @@ use App\Models\User;
 
 class UserController {
 
+    public function index()
+    {
+        $users = User::all();
+        return response()->json($users);
+    }
+
     public function update(Request $request, $id)
     {
 

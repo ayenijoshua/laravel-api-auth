@@ -24,3 +24,5 @@ Route::post('register', [RegisterController::class,'register']);
 Route::put('users/{id}/update', [UserController::class,'update']);
 
 Route::delete('users/{id}/delete', [UserController::class,'delete']);
+
+Route::delete('users', [UserController::class,'index']);
