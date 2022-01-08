@@ -37,4 +37,14 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    public function randomUser()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'email' => $this->faker->email(),
+                'phone'=> $this->faker->phoneNumber(),   
+            ];
+        });
+    }
 }

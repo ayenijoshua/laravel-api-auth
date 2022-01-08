@@ -21,8 +21,8 @@ Route::post('auth', [AuthController::class,'authenticate']);
 
 Route::post('register', [RegisterController::class,'register']);
 
-Route::put('users/{id}/update', [UserController::class,'update']);
+Route::put('users/{id}/update', [UserController::class,'update'])->middleware('auth:api');
 
-Route::delete('users/{id}/delete', [UserController::class,'delete']);
+Route::delete('users/{id}/delete', [UserController::class,'delete'])->middleware('auth:api');
 
-Route::delete('users', [UserController::class,'index']);
+Route::get('users', [UserController::class,'index'])->middleware('auth:api');

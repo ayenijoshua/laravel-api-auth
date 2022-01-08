@@ -35,11 +35,16 @@ class AuthController extends Controller{
         }
 
         Auth::login($user);
+
+        if(app()->environment('testing')){
+            return response()->json($user,200);
+        }
         
-        $user->createToken('authToken')->accessToken;
+        $token = $user->createToken('authToken')->accessToken;
 
         $resource = [
             'user' => $user,
+            'token'=>$token,
             'access_tokens' => $user->tokens,
         ];
 
